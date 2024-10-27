@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using DoAnLapTrinhWindows.ModelsNhanVien;
+using DoAnLapTrinhWindows.ModelsUsers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,7 @@ namespace DoAnLapTrinhWindows
             InitializeComponent();
         }
         NhanVienDB context = new NhanVienDB();
+        UserLoging contexts = new UserLoging();
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -166,6 +168,7 @@ namespace DoAnLapTrinhWindows
                     }
                     dgvNhanVien.Rows[index].Cells[11].Value = item.PhongBan.TenPB;
 
+
                 }
             }
             catch (Exception ex)
@@ -249,6 +252,8 @@ namespace DoAnLapTrinhWindows
             }
         }
 
+
+
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -279,6 +284,12 @@ namespace DoAnLapTrinhWindows
 
             if (employee != null)
             {
+                var userAccount = contexts.Users.FirstOrDefault(u => u.MaNV == IdEmployee);
+
+                if (userAccount != null)
+                {
+                    contexts.Users.Remove(userAccount);
+                }
                 context.NhanViens.Remove(employee);
                 context.SaveChanges();
                 MessageBox.Show("Xóa thành công!");
@@ -334,5 +345,10 @@ namespace DoAnLapTrinhWindows
             }
         }
 
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            frmCapTaiKhoan frmnew = new frmCapTaiKhoan();
+            frmnew.ShowDialog();
+        }
     }
 }

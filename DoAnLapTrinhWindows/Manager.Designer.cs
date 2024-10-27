@@ -37,9 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnTrangChu = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnDangxuat = new System.Windows.Forms.Button();
             this.btnBangLuong = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
@@ -62,10 +61,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(1086, 13);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(471, 224);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 42);
+            this.label1.Size = new System.Drawing.Size(277, 77);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản lý";
             // 
@@ -136,9 +135,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(131)))), ((int)(((byte)(89)))));
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.btnDangxuat);
             this.panel1.Controls.Add(this.btnBangLuong);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.btnNhanVien);
@@ -149,20 +147,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1263, 54);
             this.panel1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(724, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 54);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Báo Cáo";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // button9
             // 
@@ -179,19 +163,20 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button7
+            // btnDangxuat
             // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(1143, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(120, 54);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Đăng xuất";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnDangxuat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnDangxuat.FlatAppearance.BorderSize = 0;
+            this.btnDangxuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangxuat.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDangxuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangxuat.Location = new System.Drawing.Point(1143, 0);
+            this.btnDangxuat.Name = "btnDangxuat";
+            this.btnDangxuat.Size = new System.Drawing.Size(120, 54);
+            this.btnDangxuat.TabIndex = 8;
+            this.btnDangxuat.Text = "Đăng xuất";
+            this.btnDangxuat.UseVisualStyleBackColor = true;
+            this.btnDangxuat.Click += new System.EventHandler(this.btnDangxuat_Click);
             // 
             // btnBangLuong
             // 
@@ -221,6 +206,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "Phòng ban";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnNhanVien
             // 
@@ -245,6 +231,7 @@
             this.Controls.Add(this.pnlChildForm);
             this.Controls.Add(this.panel1);
             this.Name = "frmManager";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager";
             this.pnlChildForm.ResumeLayout(false);
             this.pnlChildForm.PerformLayout();
@@ -266,13 +253,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnNhanVien;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnDangxuat;
         private System.Windows.Forms.Button btnBangLuong;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button1;
     }
 }

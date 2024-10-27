@@ -34,6 +34,18 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colNgayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPhongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -64,18 +76,7 @@
             this.cmbPhongBan = new System.Windows.Forms.ComboBox();
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colNgayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPhongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.panel1.SuspendLayout();
@@ -160,6 +161,79 @@
             this.dgvNhanVien.Size = new System.Drawing.Size(1277, 441);
             this.dgvNhanVien.TabIndex = 13;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
+            // 
+            // colMaNV
+            // 
+            this.colMaNV.Frozen = true;
+            this.colMaNV.HeaderText = "Mã nhân viên";
+            this.colMaNV.Name = "colMaNV";
+            // 
+            // colTenNV
+            // 
+            this.colTenNV.Frozen = true;
+            this.colTenNV.HeaderText = "Tên nhân viên";
+            this.colTenNV.Name = "colTenNV";
+            // 
+            // colNgaySinh
+            // 
+            this.colNgaySinh.Frozen = true;
+            this.colNgaySinh.HeaderText = "Ngày sinh";
+            this.colNgaySinh.Name = "colNgaySinh";
+            // 
+            // colGioitinh
+            // 
+            this.colGioitinh.Frozen = true;
+            this.colGioitinh.HeaderText = "Giới tính";
+            this.colGioitinh.Name = "colGioitinh";
+            // 
+            // colDiaChi
+            // 
+            this.colDiaChi.Frozen = true;
+            this.colDiaChi.HeaderText = "Địa chỉ";
+            this.colDiaChi.Name = "colDiaChi";
+            // 
+            // colSDT
+            // 
+            this.colSDT.Frozen = true;
+            this.colSDT.HeaderText = "SDT";
+            this.colSDT.Name = "colSDT";
+            // 
+            // colCCCD
+            // 
+            this.colCCCD.Frozen = true;
+            this.colCCCD.HeaderText = "CCCD";
+            this.colCCCD.Name = "colCCCD";
+            // 
+            // colEmail
+            // 
+            this.colEmail.Frozen = true;
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            // 
+            // colChucVu
+            // 
+            this.colChucVu.Frozen = true;
+            this.colChucVu.HeaderText = "Chức vụ";
+            this.colChucVu.Name = "colChucVu";
+            // 
+            // colHinhAnh
+            // 
+            this.colHinhAnh.FillWeight = 200F;
+            this.colHinhAnh.HeaderText = "Hình ảnh";
+            this.colHinhAnh.Name = "colHinhAnh";
+            this.colHinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colHinhAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colHinhAnh.Width = 200;
+            // 
+            // colNgayVaoLam
+            // 
+            this.colNgayVaoLam.HeaderText = "Ngày vào làm";
+            this.colNgayVaoLam.Name = "colNgayVaoLam";
+            // 
+            // colPhongBan
+            // 
+            this.colPhongBan.HeaderText = "Phòng ban";
+            this.colPhongBan.Name = "colPhongBan";
             // 
             // panel1
             // 
@@ -508,78 +582,16 @@
             this.txtMaNV.Size = new System.Drawing.Size(158, 23);
             this.txtMaNV.TabIndex = 0;
             // 
-            // colMaNV
+            // simpleButton1
             // 
-            this.colMaNV.Frozen = true;
-            this.colMaNV.HeaderText = "Mã nhân viên";
-            this.colMaNV.Name = "colMaNV";
-            // 
-            // colTenNV
-            // 
-            this.colTenNV.Frozen = true;
-            this.colTenNV.HeaderText = "Tên nhân viên";
-            this.colTenNV.Name = "colTenNV";
-            // 
-            // colNgaySinh
-            // 
-            this.colNgaySinh.Frozen = true;
-            this.colNgaySinh.HeaderText = "Ngày sinh";
-            this.colNgaySinh.Name = "colNgaySinh";
-            // 
-            // colGioitinh
-            // 
-            this.colGioitinh.Frozen = true;
-            this.colGioitinh.HeaderText = "Giới tính";
-            this.colGioitinh.Name = "colGioitinh";
-            // 
-            // colDiaChi
-            // 
-            this.colDiaChi.Frozen = true;
-            this.colDiaChi.HeaderText = "Địa chỉ";
-            this.colDiaChi.Name = "colDiaChi";
-            // 
-            // colSDT
-            // 
-            this.colSDT.Frozen = true;
-            this.colSDT.HeaderText = "SDT";
-            this.colSDT.Name = "colSDT";
-            // 
-            // colCCCD
-            // 
-            this.colCCCD.Frozen = true;
-            this.colCCCD.HeaderText = "CCCD";
-            this.colCCCD.Name = "colCCCD";
-            // 
-            // colEmail
-            // 
-            this.colEmail.Frozen = true;
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.Name = "colEmail";
-            // 
-            // colChucVu
-            // 
-            this.colChucVu.Frozen = true;
-            this.colChucVu.HeaderText = "Chức vụ";
-            this.colChucVu.Name = "colChucVu";
-            // 
-            // colHinhAnh
-            // 
-            this.colHinhAnh.FillWeight = 200F;
-            this.colHinhAnh.HeaderText = "Hình ảnh";
-            this.colHinhAnh.Name = "colHinhAnh";
-            this.colHinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colHinhAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colHinhAnh.Width = 200;
-            // 
-            // colNgayVaoLam
-            // 
-            this.colNgayVaoLam.HeaderText = "Ngày vào làm";
-            this.colNgayVaoLam.Name = "colNgayVaoLam";
-            // 
-            // colPhongBan
-            // 
-            this.colPhongBan.HeaderText = "Phòng ban";
-            this.colPhongBan.Name = "colPhongBan";
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Location = new System.Drawing.Point(861, 12);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(129, 39);
+            this.simpleButton1.TabIndex = 15;
+            this.simpleButton1.Text = "Cấp tài khoản";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // frmNhanVien
             // 
@@ -587,6 +599,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1277, 985);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.dgvNhanVien);
@@ -660,5 +673,6 @@
         private System.Windows.Forms.DataGridViewImageColumn colHinhAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayVaoLam;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPhongBan;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

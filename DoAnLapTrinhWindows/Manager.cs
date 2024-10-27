@@ -52,7 +52,25 @@ namespace DoAnLapTrinhWindows
 
         private void button9_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new frmBaoCAo());
+        }
 
+        private void btnDangxuat_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+                Form1 loginForm = new Form1();
+                loginForm.ShowDialog();
+                
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmPhongBan());
         }
     }
 }
