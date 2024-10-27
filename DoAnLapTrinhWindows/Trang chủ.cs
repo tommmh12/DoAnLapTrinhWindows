@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,11 +67,15 @@ namespace DoAnLapTrinhWindows
 
         }
 
+
         private void BindGirdNhanVien(List<NhanVien> listNhanVien)
         {
             dgvNhanVien.Rows.Clear();
             try
             {
+                dgvNhanVien.RowTemplate.Height = 150;
+                DataGridViewImageColumn imgColumn = (DataGridViewImageColumn)dgvNhanVien.Columns[9];
+                imgColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
                 foreach (var item in listNhanVien)
                 {
                     int index = dgvNhanVien.Rows.Add();
@@ -84,9 +89,28 @@ namespace DoAnLapTrinhWindows
                     dgvNhanVien.Rows[index].Cells[6].Value = item.CCCD;
                     dgvNhanVien.Rows[index].Cells[7].Value = item.Email;
                     dgvNhanVien.Rows[index].Cells[8].Value = item.ChucVu;
-                    dgvNhanVien.Rows[index].Cells[9].Value = item.HinhAnh;
                     dgvNhanVien.Rows[index].Cells[10].Value = item.NgayVaoLam;
 
+                    if (!string.IsNullOrEmpty(item.HinhAnh))
+                    {
+                        string folderPath = Path.Combine(Application.StartupPath, "Images");
+                        string avatarFilePath = Path.Combine(folderPath, item.HinhAnh);
+
+                        if (File.Exists(avatarFilePath))
+                        {
+                            Image avatarImage = Image.FromFile(avatarFilePath);
+                            dgvNhanVien.Rows[index].Cells[9].Value = avatarImage;
+                        }
+                        else
+                        {
+                            dgvNhanVien.Rows[index].Cells[9].Value = null;
+                        }
+                    }
+                    else
+                    {
+                        dgvNhanVien.Rows[index].Cells[9].Value = null;
+
+                    }
                 }
             }
             catch (Exception ex)

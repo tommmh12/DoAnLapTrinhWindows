@@ -21,37 +21,13 @@ namespace DoAnLapTrinhWindows
         {
             InitializeComponent();
         }
-        bool expand = false;
-        private void timerXuatFile_Tick(object sender, EventArgs e)
-        {
-            if (expand == false)
-            {
-                pnlDropdown.Height += 15;
-                if (pnlDropdown.Height >= pnlDropdown.MaximumSize.Height)
-                {
-                    timerXuatFile.Stop();
-                    expand = true;
-                }
-            }
-            else
-            {
-                pnlDropdown.Height -= 15;
-                if (pnlDropdown.Height <= pnlDropdown.MinimumSize.Height)
-                {
-                    timerXuatFile.Stop();
-                    expand = false;
-                }
-            }
-        }
+
         private void LoadData()
         {
             List<Luong> listLuong = context.Luongs.ToList();
             BindGirdNhanVien(listLuong);
         }
-        private void btnXuatFile_Click(object sender, EventArgs e)
-        {
-            timerXuatFile.Start();
-        }
+
 
         private void txtPhat_TextChanged(object sender, EventArgs e)
         {
@@ -131,23 +107,6 @@ namespace DoAnLapTrinhWindows
             LoadData();
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            var newLuong = new Luong
-            {
-                MaNV = txtMaNV.Text,
-                LuongCoBan = decimal.Parse(txtLuong.Text),
-                Thuong = decimal.Parse(txtThuong.Text),
-                Phat = decimal.Parse(txtPhat.Text)
-            };
-
-            context.Luongs.Add(newLuong);
-            context.SaveChanges();
-            LoadData();
-            ClearInputFields();
-            MessageBox.Show("Thêm lương thành công!");
-        }
-
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             var luong = context.Luongs.FirstOrDefault(l => l.MaNV == txtMaNV.Text);
@@ -161,23 +120,6 @@ namespace DoAnLapTrinhWindows
                 LoadData();
                 ClearInputFields();
                 MessageBox.Show("Cập nhật lương thành công!");
-            }
-            else
-            {
-                MessageBox.Show("Nhân viên không tồn tại!");
-            }
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            var luong = context.Luongs.FirstOrDefault(l => l.MaNV == txtMaNV.Text);
-            if (luong != null)
-            {
-                context.Luongs.Remove(luong);
-                context.SaveChanges();
-                LoadData();
-                ClearInputFields();
-                MessageBox.Show("Xóa lương thành công!");
             }
             else
             {
